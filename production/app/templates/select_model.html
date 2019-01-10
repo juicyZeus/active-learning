@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="select model" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Select API Model</title>
+</head>
+<body>
+  <p>Select a model for text classification API.</p>
+  <form id="form1" action="/select_model" method="POST" enctype="multipart/form-data">
+    <select id="mySelect" name = "version">
+      <option value="tax_clf_baseline_model.h5">Baseline Model</option>
+      <option value="baseline_model_holdoneoff.h5">v1 Model</option>
+      <option value="baseline_model_holdoneoff_retrain.h5">v2 Model</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+  <p>Wait 1s, model will be refreshed on API server.</p>
+  <div id="result">
+    {% if model_version is defined %}
+        You have selected: {{ model_version }}
+    {% endif %}
+  </div>
+</body>
+</html>

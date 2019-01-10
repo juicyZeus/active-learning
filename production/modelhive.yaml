@@ -1,0 +1,30 @@
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: lego-demo
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: lego-demo
+      spec:
+        containers:
+          - image: gcr.io/p-g-us-adv-x-dat-aia-proto-1/lego-demo
+            name: lego-demo
+            ports:
+              - containerPort: 80
+                name: nginx-port
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: lego-demo
+    name: lego-demo
+  spec:
+    ports:
+      - port: 80
+        protocol: TCP
+        targetPort: 80
+    selector:
+      app: lego-demo

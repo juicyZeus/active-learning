@@ -1,0 +1,8 @@
+tensorflow
+keras
+numpy
+h5py
+matplotlib
+scipy
+skimage
+opencv-python

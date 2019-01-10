@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="select model" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Select API Model</title>
+</head>
+<body>
+    <img src="static/workflow_v1.jpg" width="50%" height="50%">
+        <h1>Make Batch Prediction  (xlsx file only)</h1>
+
+
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="data_file" />
+            <input type="submit" />
+        </form>
+
+        <br> </br>
+        <h1>Update Model With New Data  (xlsx file only)</h1>
+
+        <form action="/retrain" method="post" enctype="multipart/form-data">
+            <input type="file" name="data_file" />
+            <input type="submit" />
+        </form>
+    </body>
+</html>
